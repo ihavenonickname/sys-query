@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+NotRelevantProperty	../process.py	/^class NotRelevantProperty(Exception):$/;"	kind:class	line:4
+Parser	../parser.py	/^class Parser():$/;"	kind:class	line:6
+ParserException	../parser.py	/^class ParserException(Exception):$/;"	kind:class	line:3
+__init__	../parser.py	/^    def __init__(self):$/;"	kind:member	line:7
+_consume	../parser.py	/^    def _consume(self, name):$/;"	kind:member	line:49
+_parse_expr0	../parser.py	/^    def _parse_expr0(self):$/;"	kind:member	line:68
+_parse_expr1	../parser.py	/^    def _parse_expr1(self):$/;"	kind:member	line:72
+_parse_expr2	../parser.py	/^    def _parse_expr2(self):$/;"	kind:member	line:78
+_parse_query	../parser.py	/^    def _parse_query(self):$/;"	kind:member	line:84
+_tokenize	../parser.py	/^    def _tokenize(self, text):$/;"	kind:member	line:23
+_try_consume	../parser.py	/^    def _try_consume(self, name):$/;"	kind:member	line:60
+adjust_property	../process.py	/^def adjust_property(name, value):$/;"	kind:function	line:15
+get_pids	../process.py	/^def get_pids():$/;"	kind:function	line:39
+get_processes_infos	../process.py	/^def get_processes_infos():$/;"	kind:function	line:65
+init.py	../init.py	1;"	kind:file	line:1
+is_int	../process.py	/^def is_int(x):$/;"	kind:function	line:7
+main	../init.py	/^def main():$/;"	kind:function	line:4
+parse	../parser.py	/^    def parse(self, text):$/;"	kind:member	line:111
+parser.py	../parser.py	1;"	kind:file	line:1
+process.py	../process.py	1;"	kind:file	line:1
+read_infos	../process.py	/^def read_infos(pid):$/;"	kind:function	line:44

@@ -1,6 +1,17 @@
 from os import walk
 from os.path import join
 
+PROPERTIES = (
+    "pid",
+    "name",
+    "threads",
+    "state",
+    "parent_pid",
+    "address_space",
+    "memory_usage",
+    "context_switches"
+)
+
 class NotRelevantProperty(Exception):
     pass
 
@@ -73,5 +84,6 @@ def get_processes_infos():
 
         if "memory_usage" in infos:
             processes_infos[pid] = infos
+            processes_infos[pid]["pid"] = int(pid)
 
     return processes_infos

@@ -16,6 +16,8 @@ class Parser():
             ("slash", re.compile(r"/")),
             ("select keyword", re.compile(r"select")),
             ("from keyword", re.compile(r"from")),
+            ("order keyword", re.compile(r"order")),
+            ("by keyword", re.compile(r"by")),
             ("identifier", re.compile(r"[a-zA-Z_]+")),
             ("comma", re.compile(r"\,"))
         ]
@@ -47,10 +49,15 @@ class Parser():
                 raise ParserException("Symbol not recognized")
 
     def _consume(self, name):
+        if not self._tokens:
+            message = "Expected '{0}', found EOF".format(name)
+
+            raise ParserException(message)
+
         token = self._tokens[0]
 
-        if token["name"] != name:
-            message = "Expected '{0}', found '{1}' ".format(name, token["name"])
+        if self._tokens[0]["name"] != name:
+            message = "Expected '{0}', found '{1}'".format(name, token["name"])
 
             raise ParserException(message)
 
@@ -106,13 +113,14 @@ class Parser():
 
         query["tables"] = [self._last_lexeme]
 
+        if self._try_consume("order keyword"):
+            self._consume("by keyword")
+            self._consume("identifier")
+            query["order by"] = self._last_lexeme
+
         return query
 
     def parse(self, text):
         self._tokenize(text)
 
         return self._parse_query()
-
-
-
-
